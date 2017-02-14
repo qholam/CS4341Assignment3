@@ -1,6 +1,7 @@
 public class Icy {
   Humidity humidity;
   Temperature temp;
+  boolean isIcy;
   
   public double getProbability(){
   double probability=-1;
@@ -32,6 +33,20 @@ public class Icy {
       probability=0.35;
     }
     return probability;
+  }
+  
+  public boolean getIsIcy(){
+    return isIcy;
+  }
+  
+  public void setIsIcy(){
+    int rand = Math.random()*100+1;
+    if(rand<this.getProbability()){
+      isIcy=false;
+    }
+    if(rand>=this.getProbability()){
+      isIcy=true;
+    }
   }
   
   
