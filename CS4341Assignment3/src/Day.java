@@ -29,10 +29,8 @@ public class Day {
 		int rand = Math.random()%100;
 		if(rand<=20){
 			setIsWeekend(true);
-			setIsWeekday(false);
 		}
 		else{
-			setIsWeekend(false);
 			setIsWeekday(true);
 		}
 	}
