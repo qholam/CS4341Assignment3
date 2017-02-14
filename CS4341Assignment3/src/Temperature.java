@@ -4,6 +4,7 @@ public class Temperature {
 	private final double mildProb = 0.4;
 	private final double coldProb = 0.5;
 	
+	
 	public Temperature(){
 	}
 
@@ -13,7 +14,6 @@ public class Temperature {
 	public double getWarmProb() {
 		return warmProb;
 	}
-
 	/**
 	 * @return the mildProb
 	 */
