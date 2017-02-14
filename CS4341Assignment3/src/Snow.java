@@ -13,7 +13,8 @@ public class Snow {
 	public double getProbability(){
 		double prob = 0.0;
 		
-		
+		if(temperature.isWarm && humidity.isLow)
+			prob = 0.00001;
 		
 		return prob;
 	}
