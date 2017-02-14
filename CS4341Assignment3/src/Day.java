@@ -15,9 +15,15 @@ public class Day {
 	}
 	public void setIsWeekend(boolean val1){
 		isWeekend=val1;
+		if(val1==true){
+			setIsWeekday(false);
+		}
 	}
 	public void setIsWeekday(boolean val2){
 		isWeekday = val2;
+		if(val2==true){
+			setIsWeekend(false);
+		}
 	}
 	public determineDay(){
 		int rand = Math.random()%100;
