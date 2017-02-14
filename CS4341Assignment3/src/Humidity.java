@@ -27,14 +27,26 @@ public class Humidity {
 	
 	public void setIsLow(boolean val){
 		isLow = val;
+		if(val){
+			setIsMedium(false);
+			setIsHigh(false);
+		}
 	}
 	
 	public void setIsMedium(boolean val){
 		isMedium = val;
+		if(val){
+			setIsLow(false);
+			setIsHigh(false);
+		}
 	}
 	
 	public void setIsHigh(boolean val){
 		isHigh = val;
+		if(val){
+			setIsLow(false);
+			setIsMedium(false);
+		}
 	}
 	
 	public boolean getIsLow(){
