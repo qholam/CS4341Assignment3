@@ -2,7 +2,7 @@
 public class Exams {
 	private Snow snow;
 	private Day day;
-	private boolean isExam;
+	public boolean isExam;
 	
 	public Exams(){}
 	

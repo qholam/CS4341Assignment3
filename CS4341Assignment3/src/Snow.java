@@ -2,7 +2,7 @@
 public class Snow {
 	private Humidity humidity;
 	private Temperature temperature;
-	private boolean isSnow;
+	public boolean isSnow;
 	
 	public Snow(){
 	}

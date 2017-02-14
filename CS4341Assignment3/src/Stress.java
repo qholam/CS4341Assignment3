@@ -1,4 +1,4 @@
-public Class Stress{
+public class Stress{
   Snow snow;
   Exams exam;
   boolean isStressed;
@@ -26,8 +26,8 @@ public Class Stress{
   }
   
   public void setIsStressed(){
-    int rand = Math.random()*100+1;
-    if(rand<this.getProbability){
+    double rand = Math.random()*100+1;
+    if(rand<this.getProbability()){
       isStressed=false;
     }
     else{

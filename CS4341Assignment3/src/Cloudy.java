@@ -16,7 +16,6 @@ public class Cloudy {
 		return prob;
 	}
 	
-	
 	public boolean isCloudy(){
 		return this.isCloudy;
 	}
