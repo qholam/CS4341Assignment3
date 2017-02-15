@@ -2,7 +2,9 @@ public class Stress{
   Snow snow;
   Exams exam;
   boolean isStressed;
-  public Stress(){
+  public Stress(Snow s, Exams e){
+	  this.snow = s;
+	  this.exam = e;
   }
   public double getProbability(){
     double probability=-1;
@@ -25,8 +27,8 @@ public class Stress{
     return isStressed;
   }
   
-  public void setIsStressed(){
-    double rand = Math.random()*100+1;
+  public void determineStressed(){
+    double rand = Math.random();
     if(rand<this.getProbability()){
       isStressed=false;
     }
