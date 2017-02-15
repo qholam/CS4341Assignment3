@@ -3,7 +3,9 @@ public class Cloudy {
 	private Snow snow;
 	private boolean isCloudy;
 	
-	public Cloudy(){}
+	public Cloudy(Snow s){
+		this.snow = s;
+	}
 	
 	public double getProbability(){
 		double prob = 0;
@@ -20,7 +22,7 @@ public class Cloudy {
 		return this.isCloudy;
 	}
 	
-	public void setCloudy(){
+	public void determineCloudy(){
 		double randNum = Math.random();
 		if(randNum < this.getProbability()){
 			isCloudy = true;
