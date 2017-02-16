@@ -4,43 +4,43 @@
  *
  */
 public class NodeValues {
-	final int array_size = 8;
+	public final static int array_size = 8;
 	/*Index of each node in the array*/
-	final int humidityIndex = 0;
-	final int temperatureIndex = 1;
-	final int icyIndex = 2;
-	final int snowIndex = 3;
-	final int dayIndex = 4;
-	final int cloudyIndex = 5;
-	final int examsIndex = 6;
-	final int stressIndex = 7;
+	final static int humidityIndex = 0;
+	final static int temperatureIndex = 1;
+	final static int icyIndex = 2;
+	final static int snowIndex = 3;
+	final static int dayIndex = 4;
+	final static int cloudyIndex = 5;
+	final static int examsIndex = 6;
+	final static int stressIndex = 7;
 	
 	/*possible values for humidity*/
-	final int lowHumidity = 0;
-	final int mediumHumidity = 1;
-	final int highHumidity = 2;
+	final static int lowHumidity = 0;
+	final static int mediumHumidity = 1;
+	final static int highHumidity = 2;
 	/*possible values for temperature*/
-	final int warmTemperature = 0;
-	final int mildTemperature = 1;
-	final int coldTemperature = 2;
+	final static int warmTemperature = 0;
+	final static int mildTemperature = 1;
+	final static int coldTemperature = 2;
 	/*possible values for icy*/
-	final int isIcy = 0;
-	final int notIcy = 1;
+	final static int isIcy = 0;
+	final static int notIcy = 1;
 	/*possible values for snow*/
-	final int isSnowy = 0;
-	final int notSnowy = 1;
+	final static int isSnowy = 0;
+	final static int notSnowy = 1;
 	/*possible values for day*/
-	final int weekend = 0;
-	final int weekday = 1;
+	final static int weekend = 0;
+	final static int weekday = 1;
 	/*possible values for cloudy*/
-	final int isCloudy = 0;
-	final int notCloudy = 1;
+	final static int isCloudy = 0;
+	final static int notCloudy = 1;
 	/*possible values for exams*/
-	final int isExams = 0;
-	final int notExams = 1;
+	final static int isExams = 0;
+	final static int notExams = 1;
 	/*possible values for stress*/
-	final int highStress = 0;
-	final int lowStress = 1;
+	final static int highStress = 0;
+	final static int lowStress = 1;
 	
 	/*array that hold the values of all the nodes for a given sample*/
 	final int[] nodeValues;

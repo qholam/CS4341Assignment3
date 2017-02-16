@@ -22,7 +22,7 @@ public class RejectionSampling {
 		int count = 0;
 		
 		//array that will hold values for each node on each iteration
-		NodeValues nodeValues;
+		NodeValues nodeValues = new NodeValues();
 		
 		//run rejection sampling # of iterations times
 		for(int i = 0; i < iterations; i++){
@@ -77,7 +77,28 @@ public class RejectionSampling {
 			}
 		}
 		
-		//TODO: print out stats
+		//print out stats
+		System.out.println("Total Number of Samples: " + iterations);
+		System.out.println("Total Number of Non-rejected Samples: " + numValidSamples);
+		double probability = ((double) count)/numValidSamples;
+		System.out.println("Estimated Probability of Query Node: " + probability);
+		double standardDev = calcStandardDeviation(nodeValues);
+		System.out.println("Standard Deviation: +/-" + standardDev);
+		double confidenceInterval = 2.0*standardDev/Math.sqrt(numValidSamples);
+		
+	}
+	
+	/**
+	 * calculates standard deviation of the values of all the nodes
+	 * @param nodeValues
+	 * @return
+	 */
+	public static double calcStandardDeviation(NodeValues nodeValues){
+		double standardDev = 0.0;
+		
+		
+		
+		return standardDev;
 	}
 	
 	/**
