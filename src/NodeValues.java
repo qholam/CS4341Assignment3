@@ -49,6 +49,11 @@ public class NodeValues {
 		nodeValues = new int[array_size];
 	}
 	
+	/*get node value at specified index*/
+	public int getValueAt(int index){
+		return nodeValues[index];
+	}
+	
 	/*setter methods for each node*/
 	public void setHumidity(Humidity h){
 		if(h.getIsHigh()){

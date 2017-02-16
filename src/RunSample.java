@@ -44,7 +44,7 @@ public class RunSample {
 				{
 					if(str.toLowerCase().equals("humidity"))
 					{
-						humiditycond = type[i+1];
+						humiditycond = type[1];
 					} 
 					else if(str.toLowerCase().equals("day"))
 					{

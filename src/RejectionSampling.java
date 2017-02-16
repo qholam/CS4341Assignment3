@@ -1,11 +1,17 @@
+import java.util.ArrayList;
 
 public class RejectionSampling {
 	/**
+	 * Runs rejection sampling with given parameters. We assume that conditionIndexes and
+	 * conditionValues are the same size.
 	 * @param iterations
-	 * @param queryVariable
-	 * @param conditions
+	 * @param queryVariableIndex
+	 * @param queryVariableValue
+	 * @param conditionIndexes
+	 * @param conditionValues
 	 */
-	public void doRejectionSampling(int iterations, String queryVariable, String conditions){
+	public static void doRejectionSampling(int iterations, int queryVariableIndex, int queryVariableValue, 
+											ArrayList<Integer> conditionIndexes, ArrayList<Integer> conditionValues){
 		/*For a given input "sample humidity=low 50000 day=weekday snow=true"
 		 * the queryVariable would be "humidity=low"
 		 * and the conditions would be "day=weekday" and "snow= true"
@@ -58,20 +64,38 @@ public class RejectionSampling {
 			nodeValues.setTemperature(temperatureSimulation);
 			
 			//check if we are going to reject or accept this Simulation
-			if(reject()){
+			if(reject(nodeValues, conditionIndexes, conditionValues)){
 				//we are rejecting this sample
 			}
 			else{
 				//we are accepting this sample
 				numValidSamples++;
-				if(this sample matches our queryVariable){
+				if(nodeValues.getValueAt(queryVariableIndex) == queryVariableValue){
+					//keep track of number of times query variable value is met
 					count++;
 				}
 			}
 		}
+		
+		//TODO: print out stats
 	}
 	
-	public boolean reject(){
-		return false;
+	/**
+	 * check if the conditions are met, if not we will reject this sample
+	 * @param nodeValues
+	 * @param conditionIndexes
+	 * @param conditionValues
+	 * @return
+	 */
+	public static boolean reject(NodeValues nodeValues, ArrayList<Integer> conditionIndexes, ArrayList<Integer> conditionValues){
+		boolean reject = false;
+		
+		for(int i = 0; i < conditionIndexes.size(); i++){
+			if(nodeValues.getValueAt(conditionIndexes.get(i)) != conditionValues.get(i)){
+				reject = true;
+			}
+		}
+		
+		return reject;
 	}
 }
