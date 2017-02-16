@@ -4,7 +4,10 @@ public class Exams {
 	private Day day;
 	public boolean isExam;
 	
-	public Exams(){}
+	public Exams(Snow s, Day d){
+		this.snow = s;
+		this.day = d;
+	}
 	
 	public double getProbability(){
 		double prob = 0;
@@ -25,7 +28,7 @@ public class Exams {
 		return prob;
 	}
 	
-	public void setExams(){
+	public void determineExams(){
 		double randNum = Math.random();
 		if(randNum < this.getProbability())
 			isExam = true;

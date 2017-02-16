@@ -9,7 +9,6 @@ public class Humidity {
 	boolean isHigh = false;
 	
 	public Humidity(){
-		
 	}
 	
 	public double getLow(){
@@ -62,7 +61,7 @@ public class Humidity {
 	}
 	
 	public void determinehumidity(){
-		double rand = Math.random()*100+1;
+		double rand = Math.random()*100;
 		if(rand<=20){
 			setIsLow(true);
 		}

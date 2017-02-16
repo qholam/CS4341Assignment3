@@ -4,7 +4,9 @@ public class Snow {
 	private Temperature temperature;
 	public boolean isSnow;
 	
-	public Snow(){
+	public Snow(Humidity h, Temperature t){
+		this.humidity = h;
+		this.temperature = t;
 	}
 	
 	public double getProbability(){
@@ -12,7 +14,7 @@ public class Snow {
 		
 		if(humidity.getIsLow()){
 			if(temperature.isWarm())
-				prob = 0.00001;
+				prob = 0.0001;
 			else if(temperature.isMild())
 				prob = 0.001;
 			else //temp is cold
@@ -20,7 +22,7 @@ public class Snow {
 		}
 		else if(humidity.getIsMedium()){
 			if(temperature.isWarm())
-				prob = 0.00001;
+				prob = 0.0001;
 			else if(temperature.isMild())
 				prob = 0.0001;
 			else //temp is cold
@@ -48,7 +50,7 @@ public class Snow {
 	/**
 	 * @param isSnow the isSnow to set
 	 */
-	public void setSnow() {
+	public void determineSnow() {
 		Double randNum = Math.random();
 		if(randNum < this.getProbability())
 			this.isSnow = true;
