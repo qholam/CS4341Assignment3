@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="Assig1/CS4341Assignment1/src"/>
-	<classpathentry kind="src" path="CS4341Assig2/CS4341Assignment2/src"/>
+	<classpathentry kind="src" path="CS4341Assignment3"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="Assig1/CS4341Assignment1/bin"/>
 </classpath>
