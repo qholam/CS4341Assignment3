@@ -30,10 +30,10 @@ public class Stress{
   public void determineStressed(){
     double rand = Math.random();
     if(rand<this.getProbability()){
-      isStressed=false;
+      isStressed=true;
     }
     else{
-      isStressed=true;
+      isStressed=false;
     }
   }
 }

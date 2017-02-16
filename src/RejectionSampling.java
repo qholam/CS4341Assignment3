@@ -1,5 +1,10 @@
 
 public class RejectionSampling {
+	/**
+	 * @param iterations
+	 * @param queryVariable
+	 * @param conditions
+	 */
 	public void doRejectionSampling(int iterations, String queryVariable, String conditions){
 		/*For a given input "sample humidity=low 50000 day=weekday snow=true"
 		 * the queryVariable would be "humidity=low"
@@ -10,8 +15,14 @@ public class RejectionSampling {
 		int numValidSamples = 0;
 		int count = 0;
 		
+		//array that will hold values for each node on each iteration
+		NodeValues nodeValues;
+		
 		//run rejection sampling # of iterations times
 		for(int i = 0; i < iterations; i++){
+			//initialize array
+			nodeValues = new NodeValues();
+			
 			//Simulate first level(Humidity, Temperature, Day)
 			Humidity humiditySimulation = new Humidity();
 			humiditySimulation.determinehumidity();
@@ -35,6 +46,16 @@ public class RejectionSampling {
 			//Simulate fourth level(Stress)
 			Stress stressSimulation = new Stress(snowSimulation, examsSimulation);
 			stressSimulation.determineStressed();
+			
+			//add all node values to array
+			nodeValues.setCloudy(cloudySimulation);
+			nodeValues.setDay(daySimulation);
+			nodeValues.setExams(examsSimulation);
+			nodeValues.setHumidity(humiditySimulation);
+			nodeValues.setIcy(icySimulation);
+			nodeValues.setSnow(snowSimulation);
+			nodeValues.setStress(stressSimulation);
+			nodeValues.setTemperature(temperatureSimulation);
 			
 			//check if we are going to reject or accept this Simulation
 			if(reject()){

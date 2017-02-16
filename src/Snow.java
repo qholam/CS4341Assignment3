@@ -14,7 +14,7 @@ public class Snow {
 		
 		if(humidity.getIsLow()){
 			if(temperature.isWarm())
-				prob = 0.00001;
+				prob = 0.0001;
 			else if(temperature.isMild())
 				prob = 0.001;
 			else //temp is cold
@@ -22,7 +22,7 @@ public class Snow {
 		}
 		else if(humidity.getIsMedium()){
 			if(temperature.isWarm())
-				prob = 0.00001;
+				prob = 0.0001;
 			else if(temperature.isMild())
 				prob = 0.0001;
 			else //temp is cold

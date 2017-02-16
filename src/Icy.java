@@ -41,7 +41,7 @@ public class Icy {
 		if (rand > this.getProbability()) {
 			isIcy = false;
 		}
-		if (rand < this.getProbability()) {
+		if (rand <= this.getProbability()) {
 			isIcy = true;
 		}
 	}
