@@ -46,7 +46,7 @@ public class NodeValues {
 	final int[] nodeValues;
 	
 	public NodeValues(){
-		nodeValues = new int[array_size];
+		nodeValues = new int[array_size]; 
 	}
 	
 	/*get node value at specified index*/

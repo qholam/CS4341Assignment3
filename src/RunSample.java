@@ -47,7 +47,7 @@ public class RunSample {
 					queryVariableValue = getNodeValue(queryVariableIndex, str);
 				}else if(i == 2)
 				{
-					iteracond = Integer.parseInt(str);
+					iteracond = Integer.parseInt(str); 
 				} else
 				{
 					if(str.toLowerCase().equals("humidity"))

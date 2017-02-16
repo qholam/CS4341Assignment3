@@ -82,9 +82,13 @@ public class RejectionSampling {
 		System.out.println("Total Number of Non-rejected Samples: " + numValidSamples);
 		double probability = ((double) count)/numValidSamples;
 		System.out.println("Estimated Probability of Query Node: " + probability);
+		//calculating standard deviation and confidence interval
+		double mean = 0;
 		double standardDev = calcStandardDeviation(nodeValues);
 		System.out.println("Standard Deviation: +/-" + standardDev);
-		double confidenceInterval = 2.0*standardDev/Math.sqrt(numValidSamples);
+		double highBound = mean + 2.0*standardDev/Math.sqrt(numValidSamples);
+		double lowBound = mean - 2.0*standardDev/Math.sqrt(numValidSamples);
+		System.out.println("95% Confidence Interval: (" + lowBound + ", " + highBound + ")");
 		
 	}
 	
@@ -96,7 +100,7 @@ public class RejectionSampling {
 	public static double calcStandardDeviation(NodeValues nodeValues){
 		double standardDev = 0.0;
 		
-		
+		 
 		
 		return standardDev;
 	}
