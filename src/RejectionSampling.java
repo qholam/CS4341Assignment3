@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class RejectionSampling {
@@ -81,14 +82,16 @@ public class RejectionSampling {
 		System.out.println("Total Number of Samples: " + iterations);
 		System.out.println("Total Number of Non-rejected Samples: " + numValidSamples);
 		double probability = ((double) count)/numValidSamples;
-		System.out.println("Estimated Probability of Query Node: " + probability);
+		System.out.printf("Estimated Probability of Query Node: %.4f\n", probability);
 		//calculating standard deviation and confidence interval
-		double mean = 0;
-		double standardDev = calcStandardDeviation(nodeValues);
-		System.out.println("Standard Deviation: +/-" + standardDev);
-		double highBound = mean + 2.0*standardDev/Math.sqrt(numValidSamples);
-		double lowBound = mean - 2.0*standardDev/Math.sqrt(numValidSamples);
-		System.out.println("95% Confidence Interval: (" + lowBound + ", " + highBound + ")");
+		//caculations for both came from the professor's posting on the discussion board
+		double standardDev = Math.sqrt(probability * (1 - probability));
+		System.out.printf("Standard Deviation: +/- %.4f\n", standardDev);
+		DecimalFormat df = new DecimalFormat();
+		df.setMaximumFractionDigits(4);
+		double highBound = probability + 2.0*standardDev/Math.sqrt(numValidSamples);
+		double lowBound = probability - 2.0*standardDev/Math.sqrt(numValidSamples);
+		System.out.println("95% Confidence Interval: (" + df.format(lowBound) + ", " + df.format(highBound) + ")");
 		
 	}
 	
